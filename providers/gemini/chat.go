@@ -182,9 +182,10 @@ func ConvertFromChatOpenai(request *types.ChatCompletionRequest) (*GeminiChatReq
 		// Convert effort to thinkingLevel
 		if request.Reasoning.Effort != "" {
 			effortToLevelMap := map[string]string{
-				"low":    "LOW",
-				"medium": "MEDIUM",
-				"high":   "HIGH",
+				"minimal": "MINIMAL",
+				"low":     "LOW",
+				"medium":  "MEDIUM",
+				"high":    "HIGH",
 			}
 			if level, ok := effortToLevelMap[request.Reasoning.Effort]; ok {
 				thinkingConfig.ThinkingLevel = level
