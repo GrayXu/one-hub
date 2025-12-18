@@ -176,7 +176,7 @@ func ConvertFromChatOpenai(request *types.ChatCompletionRequest) (*GeminiChatReq
 			ThinkingBudget: &request.Reasoning.MaxTokens,
 		}
 		
-		// 将 effort 转换为 thinkingLevel
+		// Convert effort to thinkingLevel
 		if request.Reasoning.Effort != "" {
 			effortToLevelMap := map[string]string{
 				"low":    "LOW",
